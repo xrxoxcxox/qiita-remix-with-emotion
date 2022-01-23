@@ -7,6 +7,8 @@ import {
   ScrollRestoration
 } from "remix";
 import type { MetaFunction } from "remix";
+import { Global } from "@emotion/react";
+import { globalStyles } from "~/components/GlobalStyle";
 
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
@@ -25,6 +27,7 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
+        <Global styles={globalStyles} />
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
