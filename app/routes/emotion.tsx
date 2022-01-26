@@ -8,6 +8,8 @@ import {
   FeedItem,
   Data as feedItemDataType,
 } from "~/components/FeedItem";
+import rankingDataset from "~/datas/dummy-ranking.json";
+import { Ranking } from "~/components/Ranking";
 import { Footer } from "~/components/Footer";
 
 export default function Emotion() {
@@ -23,6 +25,7 @@ export default function Emotion() {
           ))}
         </main>
         <aside css={styles.sidebar}>
+          <Ranking dataset={rankingDataset} />
           <Footer css={styles.footer} />
         </aside>
       </div>
