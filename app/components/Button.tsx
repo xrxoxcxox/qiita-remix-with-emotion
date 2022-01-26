@@ -10,7 +10,7 @@ type Props = {
 } & ComponentPropsWithRef<"button">;
 
 export const Button = forwardRef<HTMLButtonElement, Props>(
-  ({ children, className, size = "m", variant = "fill", ...props }, ref) => {
+  ({ children, size = "m", variant = "fill", ...props }, ref) => {
     return (
       <button
         css={[styles.base, styles[size], styles[variant]]}
