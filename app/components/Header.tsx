@@ -8,29 +8,27 @@ type Props = {
   className?: string;
 } & ComponentPropsWithRef<"header">;
 
-export const Header = forwardRef<HTMLElement, Props>(
-  ({ ...props }, ref) => {
-    return (
-      <header css={styles.header} {...props} ref={ref}>
-        <div css={styles.inner}>
-          <h1 css={styles.logo}>
-            <img src={logoImage} width={116} height={24} alt="Logotype" />
-          </h1>
-          <Button onClick={() => alert("新規作成")} css={styles.button}>
-            新規作成
-          </Button>
-          <img
-            src="https://source.unsplash.com/random/80x80"
-            width="40"
-            height="40"
-            alt="User Icon"
-            css={styles.icon}
-          />
-        </div>
-      </header>
-    );
-  }
-);
+export const Header = forwardRef<HTMLElement, Props>(({ ...props }, ref) => {
+  return (
+    <header css={styles.header} {...props} ref={ref}>
+      <div css={styles.inner}>
+        <h1 css={styles.logo}>
+          <img src={logoImage} width={116} height={24} alt="Logotype" />
+        </h1>
+        <Button onClick={() => alert("新規作成")} css={styles.button}>
+          新規作成
+        </Button>
+        <img
+          src="https://source.unsplash.com/random/80x80"
+          width="40"
+          height="40"
+          alt="User Icon"
+          css={styles.icon}
+        />
+      </div>
+    </header>
+  );
+});
 
 const styles = {
   header: css`
@@ -56,6 +54,6 @@ const styles = {
   `,
   icon: css`
     border-radius: 50%;
-  margin-left: 24px;
-  `
-}
+    margin-left: 24px;
+  `,
+};
