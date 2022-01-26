@@ -3,6 +3,11 @@ import { Fragment } from "react";
 import { jsx, css } from "@emotion/react";
 import { Header } from "~/components/Header";
 import { Navigation } from "~/components/Navigation";
+import feedItemDataset from "~/datas/dummy-feed-items.json";
+import {
+  FeedItem,
+  Data as feedItemDataType,
+} from "~/components/FeedItem";
 import { Footer } from "~/components/Footer";
 
 export default function Emotion() {
@@ -11,6 +16,12 @@ export default function Emotion() {
       <Header />
       <div css={styles.contents}>
         <Navigation css={styles.navigation} />
+        <main css={styles.main}>
+          <h2 css={styles.headline}>ホーム</h2>
+          {feedItemDataset.map((feedItemData: feedItemDataType) => (
+            <FeedItem data={feedItemData} key={feedItemData.title} css={styles.feedItem}/>
+          ))}
+        </main>
         <aside css={styles.sidebar}>
           <Footer css={styles.footer} />
         </aside>
@@ -35,6 +46,16 @@ const styles = {
     grid-area: navigation;
     position: sticky;
     top: 88px;
+  `,
+  main: css`
+    grid-area: main;
+  `,
+  headline: css`
+    font-size: var(--font-size-subhead);
+    font-weight: bold;
+  `,
+  feedItem: css`
+    margin-top: 16px;
   `,
   sidebar: css`
     grid-area: sidebar;
