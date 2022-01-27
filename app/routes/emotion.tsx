@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { Fragment } from "react";
 import { jsx, css } from "@emotion/react";
 import { Header } from "~/components/Header";
