@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { ComponentPropsWithRef, forwardRef } from "react";
 import { jsx, css } from "@emotion/react";
 
