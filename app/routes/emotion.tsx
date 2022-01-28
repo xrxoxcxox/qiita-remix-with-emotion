@@ -1,12 +1,9 @@
 import { Fragment } from "react";
-import { jsx, css } from "@emotion/react";
+import { css } from "@emotion/react";
 import { Header } from "~/components/Header";
 import { Navigation } from "~/components/Navigation";
 import feedItemDataset from "~/datas/dummy-feed-items.json";
-import {
-  FeedItem,
-  Data as feedItemDataType,
-} from "~/components/FeedItem";
+import { FeedItem, Data as feedItemDataType } from "~/components/FeedItem";
 import rankingDataset from "~/datas/dummy-ranking.json";
 import { Ranking } from "~/components/Ranking";
 import { Footer } from "~/components/Footer";
@@ -20,7 +17,11 @@ export default function Emotion() {
         <main css={styles.main}>
           <h2 css={styles.headline}>ホーム</h2>
           {feedItemDataset.map((feedItemData: feedItemDataType) => (
-            <FeedItem data={feedItemData} key={feedItemData.title} css={styles.feedItem}/>
+            <FeedItem
+              data={feedItemData}
+              key={feedItemData.title}
+              css={styles.feedItem}
+            />
           ))}
         </main>
         <aside css={styles.sidebar}>

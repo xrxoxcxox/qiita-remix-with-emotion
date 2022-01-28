@@ -1,4 +1,4 @@
-import { Global, css } from "@emotion/react";
+import { css } from "@emotion/react";
 
 export const globalStyles = css`
   :root {
